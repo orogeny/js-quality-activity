@@ -9,36 +9,15 @@
 */
 
 // Declare variables
-var x = { name: 'Bart', age: 12 };
-var y = { name: 'Lisa', age: 10 };
+const people = [
+	{ name: 'Bart', age: 12 },
+	{ name: 'Lisa', age: 10 },
+	{ name: 'Maggie', age: 1 }
+];
 
-// put into array
-var a = [x, y, { name: 'Maggie', age: 1 }];
+people.forEach(p => console.log(p.name));
 
-// create the function
-function p(p) {
-	console.log(p.name);
-}
-
-// show all the names first
-p(x);
-p(y);
-p(a[2]);
-
-var result = 0;
-
-function cmpInpt(p) {
-	// check the input matches
-	if (p.age == getInputAge(p)) {
-		// add to result
-		result += 1; // increment for each correctly input age
-	}
-}
-
-// check all the inputs match
-cmpInpt(x);
-cmpInpt(y);
-cmpInpt(a[2]);
+const result = people.filter(p => p.age === getInputAge(p)).length;
 
 // ⛔🚫 STOP TIDYING! You're done ✅
 
@@ -47,7 +26,7 @@ cmpInpt(a[2]);
 // ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
 // PRINT SUCCESS IF EXACTLY 2 INPUTS MATCH
-console.log(`Result: ${result === 2 ? '✅ SUCCESS' : '❌ FAIL'}`);
+console.log(`Result: ${ result === 2 ? '✅ SUCCESS' : '❌ FAIL' }`);
 
 function getInputAge(person) {
 	switch (person.name) {
